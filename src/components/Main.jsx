@@ -2,7 +2,7 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 const Main = () => {
-  const [country, setCountry] = useState("tallinn");
+  const [country, setCountry] = useState("istanbul");
   const [weatherinfo, setWeather] = useState("");
   const [city, setCity] = useState("tallinn");
   const [isloading, setIsloading] = useState(true);

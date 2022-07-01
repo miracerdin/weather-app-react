@@ -22,10 +22,18 @@ form {
 }
 input {
   font-size: 1rem;
+  padding: 0.5rem;
 }
 button {
   font-size: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
+  background-color: rgb(136, 231, 144);
+  transition: all 0.5s ease-in-out;
+}
+button:hover {
+  color: white;
+  background-color: black;
 }
 h2 {
   text-align: center;
