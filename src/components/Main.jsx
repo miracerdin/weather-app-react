@@ -8,31 +8,42 @@ const Main = () => {
   const [isloading, setIsloading] = useState(true);
 
   async function fetchUrl(e) {
-    e.preventDefault(e);
-    const res = await axios(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${country}&cnt=8&appid=f0ec1584bd86d7aed802527bbf63c343&units=metric`
-    );
-    console.log(res.data.city.name);
-    setWeather(res.data);
-    setCity(res.data.city.name);
-    setCountry("");
+    console.log(e);
+    if (e === undefined) {
+      const res = await axios(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${country}&cnt=8&appid=f0ec1584bd86d7aed802527bbf63c343&units=metric`
+      );
+      console.log(res.data.city.name);
+      setWeather(res.data);
+      setCity(res.data.city.name);
+      setCountry("");
+    } else {
+      e.preventDefault();
+      const res = await axios(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${country}&cnt=8&appid=f0ec1584bd86d7aed802527bbf63c343&units=metric`
+      );
+      console.log(res.data.city.name);
+      setWeather(res.data);
+      setCity(res.data.city.name);
+      setCountry("");
+    }
   }
-  async function defaultUrl() {
-    const res = await axios(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${country}&cnt=8&appid=f0ec1584bd86d7aed802527bbf63c343&units=metric`
-    );
-    console.log(res.data.city.name);
-    setWeather(res.data);
-    setCity(res.data.city.name);
-    setIsloading(false);
-  }
+  // async function defaultUrl() {
+  //   const res = await axios(
+  //     `https://api.openweathermap.org/data/2.5/forecast?q=${country}&cnt=8&appid=f0ec1584bd86d7aed802527bbf63c343&units=metric`
+  //   );
+  //   console.log(res.data.city.name);
+  //   setWeather(res.data);
+  //   setCity(res.data.city.name);
+  //   setIsloading(false);
+  // }
 
   useEffect(() => {
-    defaultUrl();
+    fetchUrl();
   }, []);
-  if (isloading) {
-    return <h1>Loading...</h1>;
-  }
+  // if (isloading) {
+  //   return <h1>Loading...</h1>;
+  // }
 
   return (
     <main>
