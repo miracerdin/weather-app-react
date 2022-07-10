@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 [Click to see to project](https://weather-app-react-kohl-five.vercel.app/).
+![daily weather app](https://user-images.githubusercontent.com/99042499/178152664-d0c3f4e4-082e-4803-aa31-40a6d963ccfd.gif)
 
 ## Available Scripts
 
